@@ -1,9 +1,9 @@
-package mappers;
+package org.example.mappers;
 
-import dtos.ReservasRequest;
-import entities.Reservas;
-import entities.Usuarios;
-import entities.Vuelos;
+import org.example.dtos.ReservasRequest;
+import org.example.entities.Reservas;
+import org.example.entities.Usuarios;
+import org.example.entities.Vuelos;
 import org.springframework.stereotype.Service;
 
 @Service

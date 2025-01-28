@@ -1,7 +1,7 @@
-package mappers;
+package org.example.mappers;
 
-import dtos.AeropuertosRequest;
-import entities.Aeropuertos;
+import org.example.dtos.AeropuertosRequest;
+import org.example.entities.Aeropuertos;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,12 +1,13 @@
-package services;
+package org.example.services;
 
-import entities.Reservas;
-import entities.Vuelos;
+import org.example.dtos.ReservasRequest;
+import org.example.entities.Reservas;
+import org.example.entities.Vuelos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import repositories.ReservasRepositorio;
-import repositories.VuelosRepositorio;
+import org.example.repositories.ReservasRepositorio;
+import org.example.repositories.VuelosRepositorio;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -36,7 +37,15 @@ public class ReservasService {
         return reservasRepositorio.save(reserva);
     }
 
-    public List<Reservas> obtenerReservasPorUsuario(Long usuarioId) {
+    public List<ReservasRequest> obtenerReservasPorUsuario(Long usuarioId) {
         return reservasRepositorio.findByUsuarioId(usuarioId);
+    }
+
+    public ReservasRequest crearReservas(ReservasRequest reservasRequest) {
+        return reservasRequest;
+    }
+
+    public ReservasRequest obtenerReservas(Long id) {
+        return null;
     }
 }

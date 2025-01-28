@@ -1,6 +1,6 @@
-package repositories;
+package org.example.repositories;
 
-import entities.Vuelos;
+import org.example.entities.Vuelos;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDateTime;

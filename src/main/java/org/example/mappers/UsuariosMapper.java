@@ -1,11 +1,19 @@
-package mappers;
+package org.example.mappers;
 
-import dtos.UsuariosRequest;
-import entities.Usuarios;
+import org.example.dtos.UsuariosRequest;
+import org.example.entities.Usuarios;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UsuariosMapper {
+
+    public static Usuarios requestToEntity(UsuariosRequest usuariosRequest) {
+        return null;
+    }
+
+    public static UsuariosRequest entityToRequest(Usuarios usuarios) {
+        return null;
+    }
 
     public UsuariosRequest usuarioToUsuarioRequest(Usuarios usuarios) {
         if (usuarios == null) {

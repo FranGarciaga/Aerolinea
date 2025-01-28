@@ -1,4 +1,4 @@
-package dtos;
+package org.example.dtos;
 
 public class UsuariosRequest {
     private Long id;
@@ -8,8 +8,6 @@ public class UsuariosRequest {
     private String rol;
     private String imagenPerfil;
 
-    public UsuariosRequest() {}
-
     public UsuariosRequest(Long id, String nombre, String correo, String password, String rol, String imagenPerfil) {
         this.id = id;
         this.nombre = nombre;
@@ -18,6 +16,7 @@ public class UsuariosRequest {
         this.rol = rol;
         this.imagenPerfil = imagenPerfil;
     }
+    public UsuariosRequest() {}
 
     public Long getId() {
         return id;

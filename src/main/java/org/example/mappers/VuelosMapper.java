@@ -1,7 +1,7 @@
-package mappers;
+package org.example.mappers;
 
-import dtos.VuelosRequest;
-import entities.Vuelos;
+import org.example.dtos.VuelosRequest;
+import org.example.entities.Vuelos;
 import org.springframework.stereotype.Service;
 
 @Service
