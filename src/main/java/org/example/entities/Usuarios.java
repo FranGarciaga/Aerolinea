@@ -1,10 +1,7 @@
 package org.example.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -15,25 +12,36 @@ import java.util.List;
 @Table(name = "usuarios")
 public class Usuarios {
 
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Roles roles;
+
+    @Setter
     @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Setter
+    @Getter
     @Column(nullable = false, unique = true)
     private String username;
 
+    @Setter
     @Getter
     @Column(nullable = false)
     private String password;
     
+    @Setter
     @Getter
     @Column(nullable = false)
-    private String role; // ROLE_ADMIN o ROLE_USER
+    private String role;
 
+    @Setter
     @Getter
     private String profileImage;
 
+    @Setter
     @Getter
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Reservas> reservas;
@@ -41,33 +49,11 @@ public class Usuarios {
     public Usuarios(Long usuariosId) {
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getUserName() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public Roles[] getRoles() {
+        return new Roles[0];
     }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public void setProfileImage(String profileImage) {
-        this.profileImage = profileImage;
-    }
-
-    public void setReservas(List<Reservas> reservas) {
-        this.reservas = reservas;
-    }
-
-
 }
